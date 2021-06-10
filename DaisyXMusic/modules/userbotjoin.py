@@ -31,27 +31,27 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>Add me as admin of yor group first</b>",
+            "<b>Trước tiên hãy thêm tôi làm quản trị viên nhóm của bạn</b>",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "Anh Kẹo Kéo 🍭"
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id, "I joined here as you requested")
+        await USER.send_message(message.chat.id, "Anh Kẹo Kéo 🍭 đã tham gia ở đây như bạn yêu cầu")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>helper already in your chat</b>",
+            "<b>Anh kẹo kéo 🍭 đã có trong cuộc trò chuyện của bạn</b>",
         )
     except Exception as e:
         print(e)
         await message.reply_text(
             f"<b>🛑 Flood Wait Error 🛑 \n User {user.first_name} couldn't join your group due to heavy join requests for userbot! Make sure user is not banned in group."
-            "\n\nOr manually add @DaisyXhelper to your Group and try again</b>",
+            "\n\nOr manually add @HiSabo to your Group and try again</b>",
         )
         return
     await message.reply_text(
@@ -81,10 +81,10 @@ async def bye(client, message):
             try:
                 await USER.leave_chat(dialog.chat.id)
                 left = left+1
-                await lol.edit(f"Assistant leaving... Left: {left} chats. Failed: {failed} chats.")
+                await lol.edit(f"Anh Kẹo Kéo 🍭 đã rời đi ...Còn lại: {left} nhóm. Thất bại: {failed} nhóm.")
             except:
                 failed=failed+1
-                await lol.edit(f"Assistant leaving... Left: {left} chats. Failed: {failed} chats.")
+                await lol.edit(f"Anh Kẹo Kéo 🍭 đã rời đi ... Còn lại: {left} nhóm. Thất bại: {failed} nhóm.")
             await asyncio.sleep(0.7)
         await client.send_message(message.chat.id, f"Left {left} chats. Failed {failed} chats.")
     
@@ -112,7 +112,7 @@ async def addcchannel(client, message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "Anh Kẹo Kéo 🍭"
 
     try:
         await USER.join_chat(invitelink)
@@ -126,7 +126,7 @@ async def addcchannel(client, message):
         print(e)
         await message.reply_text(
             f"<b>🛑 Flood Wait Error 🛑 \n User {user.first_name} couldn't join your channel due to heavy join requests for userbot! Make sure user is not banned in channel."
-            "\n\nOr manually add @DaisyXhelper to your Group and try again</b>",
+            "\n\nOr manually add @hisabo to your Group and try again</b>",
         )
         return
     await message.reply_text(
